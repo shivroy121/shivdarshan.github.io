@@ -25,6 +25,44 @@ function linkAction(){
 }
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
+
+const home = document.getElementById('home').offsetTop;
+const about = document.getElementById('about').offsetTop;
+const skills = document.getElementById('skills').offsetTop;
+const projects = document.getElementById('work').offsetTop;
+const award = document.getElementById('award').offsetTop;
+const contact = document.getElementById('contact').offsetTop;
+
+/* UPDATE NAV WITH SCROLL*/
+document.addEventListener('scroll', function(e){
+
+    if(window.scrollY >= home && window.scrollY < about){
+        navLink.forEach(n => n.classList.remove('active'));
+        navLink[0].classList.add('active');
+    }
+    if(window.scrollY >= about && window.scrollY < skills){
+        navLink.forEach(n => n.classList.remove('active'));
+        navLink[1].classList.add('active');
+    }
+    if(window.scrollY >= skills && window.scrollY < projects){
+        navLink.forEach(n => n.classList.remove('active'));
+        navLink[2].classList.add('active');
+    }
+	if(window.scrollY >= projects && window.scrollY < award){
+        navLink.forEach(n => n.classList.remove('active'));
+        navLink[3].classList.add('active');
+    }
+    if(window.scrollY >= award && window.scrollY < contact - 200){
+        navLink.forEach(n => n.classList.remove('active'));
+        navLink[4].classList.add('active');
+    }
+    if(window.scrollY >= contact - 200){
+        navLink.forEach(n => n.classList.remove('active'));
+        navLink[5].classList.add('active');
+    }
+});
+
+
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
     origin: 'top',
@@ -55,6 +93,13 @@ sr.reveal('.work__img',{interval: 200});
 
 /*SCROLL CONTACT*/
 sr.reveal('.contact__input',{interval: 200}); 
+
+/*SCROLL SKILLS*/
+sr.reveal('.skills_subtitle',{}); 
+sr.reveal('.skills_text',{}); 
+sr.reveal('.skills_data',{interval: 200, origin: 'left'}); 
+sr.reveal('.skills_img',{delay: 600});
+
 
 
 
