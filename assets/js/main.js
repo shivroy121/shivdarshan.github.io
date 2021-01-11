@@ -101,6 +101,3 @@ sr.reveal('.skills_data',{interval: 200, origin: 'left'});
 sr.reveal('.skills_img',{delay: 600});
 
 
-
-
-
